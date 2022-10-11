@@ -8,7 +8,7 @@ namespace CRUD_Cliente.src.dto
     /// <para>Resumo: Classe responsável para transportar um cliente para registro</para>
     /// <para>Criado por: Rafael Candeias</para>
     /// </summary>
-    public class NewClient
+    public class NewClientDTO
     {
         [Required, StringLength(30)]
         public string Nome { get; set; }
@@ -30,7 +30,7 @@ namespace CRUD_Cliente.src.dto
         [Required, StringLength(50)]
         public string Cidade { get; set; }
 
-        public NewClient(string nome, string cPF, DateTime dataNasciemento, Sexo sexo, string estado, string cidade)
+        public NewClientDTO(string nome, string cPF, DateTime dataNasciemento, Sexo sexo, string estado, string cidade)
         {
             Nome = nome;
             CPF = cPF;
@@ -45,8 +45,11 @@ namespace CRUD_Cliente.src.dto
     /// <para>Resumo: Classe responsável para transportar um cliente para atualizar</para>
     /// <para>Criado por: Rafael Candeias</para>
     /// </summary>
-    public class UpdateClient
+    public class UpdateClientDTO
     {
+        [Required]
+        public int Id { get; set; }
+
         [Required, StringLength(30)]
         public string Nome { get; set; }
 
@@ -64,7 +67,7 @@ namespace CRUD_Cliente.src.dto
         [Required, StringLength(50)]
         public string Cidade { get; set; }
 
-        public UpdateClient(string nome, DateTime dataNasciemento, Sexo sexo, string estado, string cidade)
+        public UpdateClientDTO(string nome, DateTime dataNasciemento, Sexo sexo, string estado, string cidade)
         {
             Nome = nome;
             DataNasciemento = dataNasciemento;

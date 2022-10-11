@@ -9,8 +9,10 @@ namespace CRUD_Cliente.src.models
     /// <para>Criado por: Rafael Candeias</para>
     /// </summary>
     [Table("tb_clients")]
-    public class ClientModel
+    public class Client
     {
+        #region Atributos
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -21,5 +23,7 @@ namespace CRUD_Cliente.src.models
         public Sexo Sexo { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
+
+        #endregion
     }
 }
