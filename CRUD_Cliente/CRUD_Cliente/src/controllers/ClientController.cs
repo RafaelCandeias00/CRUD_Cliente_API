@@ -42,6 +42,26 @@ namespace CRUD_Cliente.src.controllers
             return Ok(list);
         }
 
+        /// <summary>
+        /// Pegar cliente pelo Id
+        /// </summary>
+        /// <param name="id">Id do cliente</param>
+        /// <returns>ActionResult</returns>
+        /// <response code="200">Id do cliente encontrado</response> 
+        /// <response code="404">Id do cliente não existente</response>
+        [HttpGet("id/{id}")]
+        public async Task<ActionResult> GetById([FromRoute] int id)
+        {
+            try
+            {
+                return Ok(await _repository.GetById(id));
+            }
+            catch(Exception ex)
+            {
+                return NotFound(new { Mensagem = ex.Message });
+            }
+        }
+
         /// <summary> 
         /// Pegar cliente pelo Nome
         /// </summary> 

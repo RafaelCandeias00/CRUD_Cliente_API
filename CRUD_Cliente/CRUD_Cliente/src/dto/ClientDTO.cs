@@ -10,6 +10,7 @@ namespace CRUD_Cliente.src.dto
     /// </summary>
     public class NewClientDTO
     {
+        #region Attributes
         [Required, StringLength(30)]
         public string Nome { get; set; }
 
@@ -29,7 +30,9 @@ namespace CRUD_Cliente.src.dto
 
         [Required, StringLength(50)]
         public string Cidade { get; set; }
+        #endregion
 
+        #region Constructor
         public NewClientDTO(string nome, string cPF, DateTime dataNasciemento, Sexo sexo, string estado, string cidade)
         {
             Nome = nome;
@@ -39,6 +42,7 @@ namespace CRUD_Cliente.src.dto
             Estado = estado;
             Cidade = cidade;
         }
+        #endregion
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace CRUD_Cliente.src.dto
     /// </summary>
     public class UpdateClientDTO
     {
+        #region Attributes
         [Required]
         public int Id { get; set; }
 
@@ -66,7 +71,9 @@ namespace CRUD_Cliente.src.dto
 
         [Required, StringLength(50)]
         public string Cidade { get; set; }
+        #endregion
 
+        #region Constructor
         public UpdateClientDTO(string nome, DateTime dataNasciemento, Sexo sexo, string estado, string cidade)
         {
             Nome = nome;
@@ -75,5 +82,6 @@ namespace CRUD_Cliente.src.dto
             Estado = estado;
             Cidade = cidade;
         }
+        #endregion
     }
 }

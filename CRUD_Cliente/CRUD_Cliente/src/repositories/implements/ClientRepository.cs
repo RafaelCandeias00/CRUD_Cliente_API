@@ -20,8 +20,6 @@ namespace CRUD_Cliente.src.repositories.implements
         {
             _context = context;
         }
-
-
         #endregion
 
         #region Method
