@@ -7,7 +7,7 @@ namespace CRUD_Cliente.src.context
     {
         public DbSet<Client> Clients { get; set; }
 
-        public ClientContext(DbContextOptions<DbContext> options) : base(options)
+        public ClientContext(DbContextOptions<ClientContext> opt) : base(opt)
         {
         }
 
